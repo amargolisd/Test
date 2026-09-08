@@ -8,18 +8,19 @@ import org.bytedeco.javacv.OpenCVFrameGrabber;
 public class CameraService {
     private final OpenCVFrameGrabber grabber;
 
-    public CameraService(OpenCVFrameGrabber grabber) {
-        grabber = new OpenCVFrameGrabber(0);
+    public CameraService() {
+        this.grabber = new OpenCVFrameGrabber(0);
     }
 
     public void start() throws FrameGrabber.Exception{
+        grabber.start();
         
     }
     public void stop() throws FrameGrabber.Exception{
-
+        grabber.stop();
     }
     public Frame grab() throws FrameGrabber.Exception{
-        grabber.frame();
+        return grabber.grabFrame();
     }
     //gitHub branch test
 }
